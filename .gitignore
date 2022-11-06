@@ -24,3 +24,6 @@ hs_err_pid*
 
 .idea/
 app/.idea/
+app/target/jacoco.exec
+app/target/site/
+app/target/surefire-reports
