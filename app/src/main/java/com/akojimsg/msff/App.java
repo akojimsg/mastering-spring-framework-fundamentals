@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class App 
 {
     public static void main( String[] args ) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.akojimsg.msff");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MyService service = ctx.getBean(MyService.class);
         service.doBussinessLogic();
