@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Maven Clean, Verify Compile
-        run: cd app && mvn -B clean verify compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals -Dsonar.java.binaries=**/target/classes
+        run: cd app && mvn -B clean verify compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals -Dsonar.java.binaries=/target/classes/com/akojimsg/msff/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}          
