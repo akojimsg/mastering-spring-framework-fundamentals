@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Assertions;
 public class AppTest {
     @Test
     public void testApp() {
-        Exception exception = Assertions.assertThrows(Exception.class, () -> {
-            App.main(null);
-        });
-
-        Assertions.assertTrue(exception.getMessage().contains("org.xml.sax.SAXParseException"));
+        App app = new App();
+        App.main(null);
+        Assertions.assertTrue(true);
+        Assertions.assertNotNull(app);
     }
 }
