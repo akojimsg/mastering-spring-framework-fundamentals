@@ -29,13 +29,17 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Unit test and coverage
+      - name: Unit Test
         run: cd app && mvn -B compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
-      - name: Maven build
+      - name: Maven Verify
+        run: cd app && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
+      - name: Maven Install
+        run: cd app && mvn -B install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
+      - name: Maven Compile
+        run: cd app && mvn -B compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals   
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: cd app && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
-      - run: cd app && mvn -B install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
-      - run: cd app && mvn -B compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals        
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}           
 
