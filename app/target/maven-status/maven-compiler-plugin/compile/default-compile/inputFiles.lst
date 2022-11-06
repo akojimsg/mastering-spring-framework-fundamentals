@@ -1,4 +1,8 @@
+/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/business/AnotherServiceImpl.java
 /Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/App.java
 /Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/AppConfig.java
-/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/MyRepository.java
-/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/MyService.java
+/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/data/MyRepository.java
+/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/business/MyService.java
+/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/data/MyRepositoryImpl.java
+/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/data/SomeOtherRepositoryImpl.java
+/Users/ei1020/github.com/akojimsg/mastering-spring-framework-fundamentals/app/src/main/java/com/akojimsg/msff/business/MyServiceImpl.java
