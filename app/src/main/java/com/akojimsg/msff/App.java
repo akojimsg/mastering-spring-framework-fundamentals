@@ -17,5 +17,6 @@ public class App
 
         MyRepository repository = ctx.getBean(MyRepository.class);
         repository.doQuery();
+
     }
 }
