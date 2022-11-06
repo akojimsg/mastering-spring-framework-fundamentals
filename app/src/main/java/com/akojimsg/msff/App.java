@@ -1,7 +1,8 @@
 package com.akojimsg.msff;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 /**
  * Simple spring application
@@ -10,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App 
 {
     public static void main( String[] args ) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MyService service = ctx.getBean(MyService.class);
         service.doBussinessLogic();
