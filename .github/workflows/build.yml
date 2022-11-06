@@ -31,15 +31,23 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Unit Test
         run: cd app && mvn -B compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
-      - name: Maven Verify
-        run: cd app && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
-      - name: Maven Install
-        run: cd app && mvn -B install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
-      - name: Maven Compile
-        run: cd app && mvn -B compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals   
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}           
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   
+      - name: Maven Verify
+        run: cd app && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}         
+      - name: Maven Install
+        run: cd app && mvn -B install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}         
+      - name: Maven Compile
+        run: cd app && mvn -B compile org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=akojimsg_mastering-spring-framework-fundamentals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}         
+        
 
