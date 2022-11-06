@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.akojimsg.msff</groupId>
-  <artifactId>ch01</artifactId>
+  <artifactId>spring-app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>ch01</name>
+  <name>spring-app</name>
   <url>http://maven.apache.org</url>
 
   <properties>
