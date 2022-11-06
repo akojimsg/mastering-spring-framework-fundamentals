@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="service" class="com.akojimsg.msff.MyService">
-        <constructor-arg ref="repository" />
+        <property name="repository" ref="repository"/>
     </bean>
     <bean id="repository" class="com.akojimsg.msff.MyRepository" />
 </beans>

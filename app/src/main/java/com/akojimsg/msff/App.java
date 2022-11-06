@@ -11,7 +11,12 @@ public class App
 {
     public static void main( String[] args ) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
-        MyService bean = ctx.getBean(MyService.class);
-        bean.doSomething();
+
+        MyService service = ctx.getBean(MyService.class);
+        service.doBussinessLogic();
+
+        MyRepository repository = ctx.getBean(MyRepository.class);
+        repository.doQuery();
+
     }
 }
