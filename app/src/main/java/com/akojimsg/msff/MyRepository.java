@@ -1,10 +1,9 @@
 package com.akojimsg.msff;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.logging.Logger;
 
 public class MyRepository {
-    private static Logger logger = LoggerFactory.getLogger(MyService.class);
+    private static Logger logger = Logger.getLogger(MyRepository.class.getName());
     public void doQuery() {
         logger.info("Bussiness logic happens here");
     }
