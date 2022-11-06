@@ -1,7 +1,10 @@
 package com.akojimsg.msff;
 
+import com.akojimsg.msff.business.AnotherServiceImpl;
+import com.akojimsg.msff.business.MyService;
+import com.akojimsg.msff.business.MyServiceImpl;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Simple spring application
@@ -10,13 +13,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App 
 {
     public static void main( String[] args ) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext("com.akojimsg.msff");
 
-        MyService service = ctx.getBean(MyService.class);
-        service.doBussinessLogic();
+        MyService service1 = ctx.getBean(MyServiceImpl.class);
+        service1.doBussinessLogic();
 
-        MyRepository repository = ctx.getBean(MyRepository.class);
-        repository.doQuery();
+        MyService service2 = ctx.getBean(AnotherServiceImpl.class);
+        service2.doBussinessLogic();
 
     }
 }
