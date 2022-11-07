@@ -1,9 +1,15 @@
 package com.akojimsg.msff;
 
 
-public class App 
+import org.springframework.aop.framework.ProxyFactoryBean;
+
+public class App
 {
     public static void main( String[] args ) {
-        System.out.println("Clean spring application template");
+        ProxyFactoryBean pfb = new ProxyFactoryBean();
+        pfb.setTarget(new Person());
+        Object personProxy = pfb.getObject();
+        IPerson bean = (IPerson) personProxy;
+        bean.greet();
     }
 }
