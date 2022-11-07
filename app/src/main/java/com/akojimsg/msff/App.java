@@ -15,8 +15,5 @@ public class App
         MyService service = ctx.getBean(MyService.class);
         service.doBussinessLogic();
 
-        MyRepository repository = ctx.getBean(MyRepository.class);
-        repository.doQuery();
-
     }
 }
