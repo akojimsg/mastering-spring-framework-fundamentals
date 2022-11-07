@@ -1,9 +1,12 @@
 package com.akojimsg.msff;
 
 
-public class App 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App
 {
     public static void main( String[] args ) {
-        System.out.println("Clean spring application template");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
     }
 }
