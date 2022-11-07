@@ -1,9 +1,15 @@
 package com.akojimsg.msff;
 
 
-public class App 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+public class App
 {
     public static void main( String[] args ) {
-        System.out.println("Clean spring application template");
+        AbstractApplicationContext ctx = new AnnotationConfigApplicationContext("com.akojimsg.msff");
+        ctx.start();
+        ctx.close();
     }
 }
