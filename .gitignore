@@ -27,3 +27,7 @@ app/.idea/
 app/target/jacoco.exec
 app/target/site/
 app/target/surefire-reports
+.DS_Store
+app/.DS_Store
+app/src/.DS_Store
+app/src/main/.DS_Store
