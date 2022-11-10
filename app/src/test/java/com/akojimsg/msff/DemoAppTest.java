@@ -3,11 +3,11 @@ package com.akojimsg.msff;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-class AppTest {
+class DemoAppTest {
     @Test
     void testApp() {
-        App app = new App();
-        App.main(null);
+        DemoApp app = new DemoApp();
+        DemoApp.main(null);
         Assertions.assertTrue(true);
         Assertions.assertNotNull(app);
     }
